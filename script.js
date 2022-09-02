@@ -1,5 +1,10 @@
+let choiceCOM;
+let choicePLR;
 
 
+
+let com;
+let plr;
 
     
  let point;
@@ -11,7 +16,7 @@ let p=0;
 
 let c=0;
 
-
+let space="    ";
 
 
 
@@ -69,25 +74,51 @@ else if (plr=='S' && com=='S'){
 
 for(i=1;i<=5;i++){
     
-    console.log(`Round ${i}`)
+    console.log(`Round ${i} \n`)
+    document.write(`Round ${i} `)
+    document.write("<br>")
+
+    // input 
     
-    let plr =  prompt("Enter your choice (Rock- R, paper- P , Scisor- S");
+     plr =  prompt("Enter your choice (Rock- R, paper- P , Scisor- S");
+     
+    
 
-    let com= Math.floor(Math.random()*10) ;
+     com = Math.floor(Math.random()*(3-1))+1 ;
+// computer random no conversion in right input
 
-
-    if (com<=3){
+    if (com==1){
   
         com= 'R';
        
    }
-   else if (com<=6){
+   else if (com==2){
         com= 'P';
    
    }
-   else if (com<=10){
+   else if (com==3){
         com='S';
    }
+
+//   computer choice
+
+if (com=='R'){
+    document.write("computer choosed :ROCK")
+    document.write("<br>")
+}
+
+else if (com=='P'){
+    document.write("computer choosed :PAPER")
+    document.write("<br>")
+}
+
+else{
+    document.write("computer choosed :SCISOR")
+    document.write("<br>")
+}
+
+   // input insensitivity conversion
+
    
    if (plr=='r' || plr=='R'){
    plr='R';
@@ -106,13 +137,33 @@ for(i=1;i<=5;i++){
    
        alert("wrong input")
    }
-   
 
+//    player choice
+
+if (plr=='R'){
+    document.write("you choosed :ROCK")
+    document.write("<br>")
+    document.write("<br>")
+}
+
+else if (plr=='P'){
+    document.write("you choosed :PAPER")
+    document.write("<br>")
+    document.write("<br>")
+}
+
+else{
+    document.write("you choosed :SCISOR")
+    document.write("<br>")
+    document.write("<br>")
+}
  
 
     game(com,plr)
     p= p+point;
     c= c+cp;
+
+    // current round point show
 
     console.log(`your point:${point}`);
     console.log(`computer point:${cp}`);
@@ -121,8 +172,15 @@ for(i=1;i<=5;i++){
     
 }
 
-console.log(`Total point= ${p}`);
-console.log(`Total point= ${c}`);
+ // total point show
+
+console.log("\n")
+console.log(` Your Total point= ${p}`);
+console.log(`Total Computer point= ${c}`);
+
+
+// final result
+
 if(p >c){
     console.log("CONGRATULATIONS YOU WIN " );
 } else if(c==p){
