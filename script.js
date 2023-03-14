@@ -16,7 +16,7 @@ let p=0;
 
 let c=0;
 
-let space="    ";
+let space="     ";
 
 
 
